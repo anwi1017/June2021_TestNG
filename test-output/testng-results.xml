@@ -1,17 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="5808" started-at="2021-06-19T06:37:26 UTC" finished-at="2021-06-19T06:37:32 UTC">
+  <suite name="Suite" duration-ms="5295" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:22 UTC">
     <groups>
+      <group name="Sanity">
+        <method signature="Testcase1.LoginTest()[pri:0, instance:test.Testcase1@3043fe0e]" name="LoginTest" class="test.Testcase1"/>
+      </group> <!-- Sanity -->
+      <group name="Regression">
+        <method signature="Testcase1.RandomName()[pri:0, instance:test.Testcase1@3043fe0e]" name="RandomName" class="test.Testcase1"/>
+        <method signature="Testcase1.SignUpTest()[pri:0, instance:test.Testcase1@3043fe0e]" name="SignUpTest" class="test.Testcase1"/>
+      </group> <!-- Regression -->
     </groups>
-    <test name="Default test" duration-ms="5808" started-at="2021-06-19T06:37:26 UTC" finished-at="2021-06-19T06:37:32 UTC">
+    <test name="Test" duration-ms="5295" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:22 UTC">
       <class name="test.LoginTest">
-        <test-method status="PASS" signature="test1()[pri:0, instance:test.LoginTest@64729b1e]" name="test1" duration-ms="5748" started-at="2021-06-19T06:37:26 UTC" finished-at="2021-06-19T06:37:32 UTC">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.LoginTest@7d70d1b1]" name="setup" is-config="true" duration-ms="1969" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:19 UTC">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test1 -->
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="Login(java.lang.String,java.lang.String)[pri:0, instance:test.LoginTest@7d70d1b1]" name="Login" duration-ms="3126" started-at="2021-06-19T07:16:19 UTC" finished-at="2021-06-19T07:16:22 UTC">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[anwi1017@mail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[9876]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:test.LoginTest@7d70d1b1]" name="teardown" is-config="true" duration-ms="130" started-at="2021-06-19T07:16:22 UTC" finished-at="2021-06-19T07:16:22 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- test.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="test.Testcase2">
+        <test-method status="PASS" signature="HomePageTest()[pri:0, instance:test.Testcase2@2a556333]" name="HomePageTest" duration-ms="1" started-at="2021-06-19T07:16:17 UTC" description="Verify the homepage functionality" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomePageTest -->
+        <test-method status="PASS" signature="HomePageTest2()[pri:0, instance:test.Testcase2@2a556333]" name="HomePageTest2" duration-ms="1" started-at="2021-06-19T07:16:17 UTC" depends-on-methods="test.Testcase2.HomePageTest" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomePageTest2 -->
+        <test-method status="PASS" signature="HomePageTest3()[pri:0, instance:test.Testcase2@2a556333]" name="HomePageTest3" duration-ms="0" started-at="2021-06-19T07:16:17 UTC" depends-on-methods="test.Testcase2.HomePageTest2" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- HomePageTest3 -->
+      </class> <!-- test.Testcase2 -->
+      <class name="test.Testcase1">
+        <test-method status="PASS" signature="BeforeTestMethod()[pri:0, instance:test.Testcase1@3043fe0e]" name="BeforeTestMethod" is-config="true" duration-ms="8" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- BeforeTestMethod -->
+        <test-method status="PASS" signature="Setup()[pri:0, instance:test.Testcase1@3043fe0e]" name="Setup" is-config="true" duration-ms="0" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method status="PASS" signature="LoginTest()[pri:0, instance:test.Testcase1@3043fe0e]" name="LoginTest" duration-ms="4" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginTest -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:test.Testcase1@3043fe0e]" name="AfterMethod" is-config="true" duration-ms="0" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="RandomName()[pri:0, instance:test.Testcase1@3043fe0e]" name="RandomName" duration-ms="1" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RandomName -->
+        <test-method status="PASS" signature="Setup()[pri:0, instance:test.Testcase1@3043fe0e]" name="Setup" is-config="true" duration-ms="0" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:test.Testcase1@3043fe0e]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="SignUpTest()[pri:0, instance:test.Testcase1@3043fe0e]" name="SignUpTest" duration-ms="1" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SignUpTest -->
+        <test-method status="PASS" signature="Setup()[pri:0, instance:test.Testcase1@3043fe0e]" name="Setup" is-config="true" duration-ms="0" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Setup -->
+        <test-method status="PASS" signature="AfterMethod()[pri:0, instance:test.Testcase1@3043fe0e]" name="AfterMethod" is-config="true" duration-ms="1" started-at="2021-06-19T07:16:17 UTC" finished-at="2021-06-19T07:16:17 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterMethod -->
+        <test-method status="PASS" signature="AfterTestMethod()[pri:0, instance:test.Testcase1@3043fe0e]" name="AfterTestMethod" is-config="true" duration-ms="0" started-at="2021-06-19T07:16:22 UTC" finished-at="2021-06-19T07:16:22 UTC">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AfterTestMethod -->
+      </class> <!-- test.Testcase1 -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
