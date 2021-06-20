@@ -13,10 +13,20 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
+
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class LoginTest {
 	
 	WebDriver driver;
+	
+	ExtentReports report;
+	ExtentTest test;
+	
+	SoftAssert soft = new SoftAssert();	
 	
 	@BeforeMethod
 	public void setup() {
@@ -29,15 +39,21 @@ public class LoginTest {
 		driver.manage().window().maximize();
 		
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+		
+		report = new ExtentReports("ExtentReport.html");
 	}
 		
 	@Test
 	@Parameters({"username","password"})
 	public void Login(String uname, String pass) {
+		
+		test = report.startTest("Login Test Case");
 				
 		WebElement LoginLink = driver.findElement(By.linkText("Log in"));
 		
 		LoginLink.click();
+		
+		test.log(LogStatus.PASS, "Successfully clicked on the login link");
 		
 		WebElement UserName = driver.findElement(By.name("user_login"));
 		
@@ -47,6 +63,8 @@ public class LoginTest {
 		
 		UserName.sendKeys(uname);
 		
+		test.log(LogStatus.PASS, "Successfully entered username");
+		
 		WebElement Rememberme = driver.findElement(By.className("rememberMe"));
 		
 		Rememberme.click();
@@ -55,26 +73,45 @@ public class LoginTest {
 		
 		Password.sendKeys(pass);
 		
+		test.log(LogStatus.PASS, "Successfully entered the password");
+		
 		WebElement LoginBtn = driver.findElement(By.name("btn_login"));
 		
 		LoginBtn.click();
 		
+		test.log(LogStatus.PASS, "Successfully clicked on the login button");
+		
 		WebElement LoginError = driver.findElement(By.className("error_msg"));
 		
 		String ActMsg = LoginError.getText();
-		String ExpMsg = "The email or password you have entered is invalid.";
+		String ExpMsg = "The email or password you have entered is invalid";
 		
 		Assert.assertTrue(LoginError.isDisplayed());
-		Assert.assertEquals(ActMsg, ExpMsg);
+		
+		soft.assertEquals(ActMsg, ExpMsg);
+		
+		System.out.println("After Soft Assert");
+		
+		/*try {
+			Assert.assertEquals(ActMsg, ExpMsg);
+			test.log(LogStatus.PASS, "Expected and Actual values match");
+			
+		}catch(Throwable e) { 
+			test.log(LogStatus.FAIL, "Expected and Actual values do not match");
+		}*/
 
 		
 	}
 	
 	@AfterMethod
 	public void teardown() {
+			
+		report.endTest(test);
+		report.flush();
 		
 		driver.close();
 		
+		soft.assertAll();
 	}
 
 }
