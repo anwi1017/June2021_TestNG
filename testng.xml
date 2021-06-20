@@ -12,19 +12,19 @@
 	<parameter name="password" value="9876"/>
 	
   <test thread-count="5" name="Test">
-      <classes>
-      <class name="test.Testcase1">
-      <!--  	<methods>
+       <classes>
+     <!--  <class name="test.Testcase1">
+      	<methods>
       		
       		<include name=".*Test"/>
       		<include name="LoginTest"/>
       		<exclude name="LoginTest"/> 
       	</methods> 
-      	-->
-      </class>
+          	
+      </class> 	-->
       
-      <class name="test.Testcase2"/>
-      <!-- <class name="test1.Testcase3"/>-->
+      <!--  <class name="test.Testcase2"/>
+     <class name="test1.Testcase3"/>-->
       <class name="test.LoginTest"/>
       
     </classes>

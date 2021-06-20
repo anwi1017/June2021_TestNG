@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
@@ -29,8 +30,7 @@ public class LoginTest {
 		
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 	}
-	
-	
+		
 	@Test
 	@Parameters({"username","password"})
 	public void Login(String uname, String pass) {
@@ -59,11 +59,22 @@ public class LoginTest {
 		
 		LoginBtn.click();
 		
+		WebElement LoginError = driver.findElement(By.className("error_msg"));
+		
+		String ActMsg = LoginError.getText();
+		String ExpMsg = "The email or password you have entered is invalid.";
+		
+		Assert.assertTrue(LoginError.isDisplayed());
+		Assert.assertEquals(ActMsg, ExpMsg);
+
+		
 	}
 	
 	@AfterMethod
 	public void teardown() {
+		
 		driver.close();
+		
 	}
 
 }
