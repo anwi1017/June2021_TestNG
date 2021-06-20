@@ -8,8 +8,8 @@
 </groups>
 -->
 
-	<parameter name="username" value="anwi1017@mail.com"/>
-	<parameter name="password" value="9876"/>
+	<parameter name="username" value="standard_user"/>
+	<parameter name="password" value="secret_sauce"/>
 	
   <test thread-count="5" name="Test">
        <classes>
@@ -24,8 +24,9 @@
       </class> 	-->
       
       <!--  <class name="test.Testcase2"/>
-     <class name="test1.Testcase3"/>-->
-      <class name="test.LoginTest"/>
+     <class name="test1.Testcase3"/>
+      <class name="test.LoginTest"/> -->
+      <class name="shoppingTest.Testcase1"/>
       
     </classes>
   </test> <!-- Test -->
