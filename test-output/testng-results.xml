@@ -1,41 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="1" total="2" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="2007" started-at="2021-06-20T06:57:26 UTC" finished-at="2021-06-20T06:57:28 UTC">
+  <suite name="Suite" duration-ms="7148" started-at="2021-06-26T05:55:27 UTC" finished-at="2021-06-26T05:55:35 UTC">
     <groups>
     </groups>
-    <test name="Test" duration-ms="2007" started-at="2021-06-20T06:57:26 UTC" finished-at="2021-06-20T06:57:28 UTC">
-      <class name="shoppingTest.Testcase1">
-        <test-method status="PASS" signature="setup()[pri:0, instance:shoppingTest.Testcase1@6f195bc3]" name="setup" is-config="true" duration-ms="1182" started-at="2021-06-20T06:57:26 UTC" finished-at="2021-06-20T06:57:27 UTC">
+    <test name="Test" duration-ms="7148" started-at="2021-06-26T05:55:27 UTC" finished-at="2021-06-26T05:55:35 UTC">
+      <class name="test.LoginTest">
+        <test-method status="PASS" signature="setup()[pri:0, instance:test.LoginTest@4232c52b]" name="setup" is-config="true" duration-ms="2935" started-at="2021-06-26T05:55:27 UTC" finished-at="2021-06-26T05:55:30 UTC">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="Login(java.lang.String,java.lang.String)[pri:0, instance:shoppingTest.Testcase1@6f195bc3]" name="Login" duration-ms="396" started-at="2021-06-20T06:57:27 UTC" finished-at="2021-06-20T06:57:28 UTC">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[standard_user]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[secret_sauce]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="LoginTestcase2()[pri:0, instance:test.LoginTest@4232c52b]" name="LoginTestcase2" duration-ms="3754" started-at="2021-06-26T05:55:30 UTC" finished-at="2021-06-26T05:55:34 UTC">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method status="PASS" signature="addToCart()[pri:0, instance:shoppingTest.Testcase1@6f195bc3]" name="addToCart" duration-ms="296" started-at="2021-06-20T06:57:28 UTC" depends-on-methods="shoppingTest.Testcase1.Login" finished-at="2021-06-20T06:57:28 UTC">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addToCart -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:shoppingTest.Testcase1@6f195bc3]" name="teardown" is-config="true" duration-ms="89" started-at="2021-06-20T06:57:28 UTC" finished-at="2021-06-20T06:57:28 UTC">
+        </test-method> <!-- LoginTestcase2 -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:test.LoginTest@4232c52b]" name="teardown" is-config="true" duration-ms="411" started-at="2021-06-26T05:55:34 UTC" finished-at="2021-06-26T05:55:35 UTC">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- shoppingTest.Testcase1 -->
+      </class> <!-- test.LoginTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
