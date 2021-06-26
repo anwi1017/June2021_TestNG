@@ -19,6 +19,8 @@ import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import pages.LoginPage;
+
 public class LoginTest {
 	
 	WebDriver driver;
@@ -45,61 +47,10 @@ public class LoginTest {
 		
 	@Test
 	@Parameters({"username","password"})
-	public void Login(String uname, String pass) {
+	public void LoginTest(String uname, String pass) {
 		
-		test = report.startTest("Login Test Case");
-				
-		WebElement LoginLink = driver.findElement(By.linkText("Log in"));
-		
-		LoginLink.click();
-		
-		test.log(LogStatus.PASS, "Successfully clicked on the login link");
-		
-		WebElement UserName = driver.findElement(By.name("user_login"));
-		
-		WebDriverWait wait = new WebDriverWait(driver,30);
-			
-		wait.until(ExpectedConditions.elementToBeClickable(UserName));
-		
-		UserName.sendKeys(uname);
-		
-		test.log(LogStatus.PASS, "Successfully entered username");
-		
-		WebElement Rememberme = driver.findElement(By.className("rememberMe"));
-		
-		Rememberme.click();
-		
-		WebElement Password = driver.findElement(By.id("password"));
-		
-		Password.sendKeys(pass);
-		
-		test.log(LogStatus.PASS, "Successfully entered the password");
-		
-		WebElement LoginBtn = driver.findElement(By.name("btn_login"));
-		
-		LoginBtn.click();
-		
-		test.log(LogStatus.PASS, "Successfully clicked on the login button");
-		
-		WebElement LoginError = driver.findElement(By.className("error_msg"));
-		
-		String ActMsg = LoginError.getText();
-		String ExpMsg = "The email or password you have entered is invalid";
-		
-		Assert.assertTrue(LoginError.isDisplayed());
-		
-		soft.assertEquals(ActMsg, ExpMsg);
-		
-		System.out.println("After Soft Assert");
-		
-		/*try {
-			Assert.assertEquals(ActMsg, ExpMsg);
-			test.log(LogStatus.PASS, "Expected and Actual values match");
-			
-		}catch(Throwable e) { 
-			test.log(LogStatus.FAIL, "Expected and Actual values do not match");
-		}*/
-
+		LoginPage loginObj = new LoginPage();
+		loginObj.Login(uname, pass);
 		
 	}
 	
